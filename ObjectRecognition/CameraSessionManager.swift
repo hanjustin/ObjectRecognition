@@ -1,5 +1,5 @@
 //
-//  CameraManager.swift
+//  CameraSessionManager.swift
 //  ObjectRecognition
 //
 //  Created by Justin Lee on 2/11/23.
@@ -9,8 +9,29 @@ import AVFoundation
 import UIKit
 import Vision
 
-class CameraManager {
-    static let shared = CameraManager()
+protocol CameraSessionInterface {
+    var captureSession: AVCaptureSession { get }
+    var dataOutput: AVCaptureVideoDataOutput { get }
+    
+    static func videoOrientationFor(_ deviceOrientation: UIDeviceOrientation) -> AVCaptureVideoOrientation
+    
+    func startRunning() async
+}
+
+extension CameraSessionInterface {
+    static func videoOrientationFor(_ deviceOrientation: UIDeviceOrientation) -> AVCaptureVideoOrientation {
+        switch deviceOrientation {
+        case .portrait: return .portrait
+        case .portraitUpsideDown: return .portraitUpsideDown
+        case .landscapeLeft: return .landscapeRight
+        case .landscapeRight: return .landscapeLeft
+        default: return .portrait
+        }
+    }
+}
+
+class CameraSessionManager {
+    static let shared = CameraSessionManager()
     
     static func videoOrientationFor(_ deviceOrientation: UIDeviceOrientation) -> AVCaptureVideoOrientation {
         switch deviceOrientation {
@@ -55,3 +76,9 @@ class CameraManager {
     }
 }
 
+extension CameraSessionManager: CameraSessionInterface {
+    func startRunning() async {
+        await requestCameraAuthorizationIfNeeded()
+        configureSession()
+    }
+}
