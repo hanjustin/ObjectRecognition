@@ -9,7 +9,7 @@ import AVFoundation
 import Vision
 
 protocol ImageClassifierDelegate: AnyObject {
-    func identifiedNewObjectWith(classification: String, confidence: Float)
+    func didIdentifyNewObject(handle analysis: ImageClassificationAnalysis)
 }
 
 class ImageClassifier {
@@ -31,21 +31,20 @@ class ImageClassifier {
                     let firstObservation = results.first
                 else { return }
                 
-                // VIDEO QUEUE
-                print(firstObservation.identifier, firstObservation.confidence)
                 Task { @MainActor in
-                    self.delegate?.identifiedNewObjectWith(classification: firstObservation.identifier, confidence: firstObservation.confidence)
+                    let analysis = ImageClassificationAnalysis(VNData: firstObservation)
+                    self.delegate?.didIdentifyNewObject(handle: analysis)
                 }
             }
             
-            self.requests = [objectRecognition]
+            requests = [objectRecognition]
         } catch {
             print("Error: Could not set up Vision")
             
         }
     }
     
-    func gatherObservations(pixelBuffer: CVImageBuffer) {
+    func gatherObservations(for pixelBuffer: CVImageBuffer) {
         let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer)
         do {
             try imageRequestHandler.perform(requests)

@@ -7,15 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		364C43712995EB570008A5C4 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 364C43702995EB570008A5C4 /* Resnet50.mlmodel */; };
+		366098C92997C46E00A74073 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366098C82997C46E00A74073 /* ContentViewModel.swift */; };
+		366098CB2997DAC400A74073 /* CameraSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366098CA2997DAC400A74073 /* CameraSessionManager.swift */; };
 		3668D35F2992966A00F33006 /* ObjectClassificationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3668D35E2992966A00F33006 /* ObjectClassificationApp.swift */; };
 		3668D3612992966A00F33006 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3668D3602992966A00F33006 /* ContentView.swift */; };
 		3668D3632992966C00F33006 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3668D3622992966C00F33006 /* Assets.xcassets */; };
 		3668D3662992966C00F33006 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3668D3652992966C00F33006 /* Preview Assets.xcassets */; };
 		3668D36F2992985400F33006 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3668D36E2992985400F33006 /* CameraViewController.swift */; };
 		3668D37129929EEA00F33006 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3668D37029929EEA00F33006 /* CameraView.swift */; };
+		369E423029992EB200231BE2 /* ImageClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369E422F29992EB200231BE2 /* ImageClassifier.swift */; };
+		369E423229992F1300231BE2 /* ImageClassificationAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369E423129992F1300231BE2 /* ImageClassificationAnalysis.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		364C43702995EB570008A5C4 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
+		366098C82997C46E00A74073 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		366098CA2997DAC400A74073 /* CameraSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraSessionManager.swift; sourceTree = "<group>"; };
 		3668D35B2992966A00F33006 /* ObjectRecognition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectRecognition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3668D35E2992966A00F33006 /* ObjectClassificationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectClassificationApp.swift; sourceTree = "<group>"; };
 		3668D3602992966A00F33006 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -24,6 +32,8 @@
 		3668D36E2992985400F33006 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		3668D37029929EEA00F33006 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		3668D3722992A00000F33006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		369E422F29992EB200231BE2 /* ImageClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassifier.swift; sourceTree = "<group>"; };
+		369E423129992F1300231BE2 /* ImageClassificationAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassificationAnalysis.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +69,15 @@
 				3668D3722992A00000F33006 /* Info.plist */,
 				3668D35E2992966A00F33006 /* ObjectClassificationApp.swift */,
 				3668D3602992966A00F33006 /* ContentView.swift */,
+				366098CA2997DAC400A74073 /* CameraSessionManager.swift */,
 				3668D37029929EEA00F33006 /* CameraView.swift */,
 				3668D36E2992985400F33006 /* CameraViewController.swift */,
+				366098C82997C46E00A74073 /* ContentViewModel.swift */,
+				369E422F29992EB200231BE2 /* ImageClassifier.swift */,
+				364C43702995EB570008A5C4 /* Resnet50.mlmodel */,
 				3668D3622992966C00F33006 /* Assets.xcassets */,
 				3668D3642992966C00F33006 /* Preview Content */,
+				369E423129992F1300231BE2 /* ImageClassificationAnalysis.swift */,
 			);
 			path = ObjectRecognition;
 			sourceTree = "<group>";
@@ -146,9 +161,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3668D37129929EEA00F33006 /* CameraView.swift in Sources */,
+				369E423029992EB200231BE2 /* ImageClassifier.swift in Sources */,
 				3668D3612992966A00F33006 /* ContentView.swift in Sources */,
+				366098CB2997DAC400A74073 /* CameraSessionManager.swift in Sources */,
 				3668D36F2992985400F33006 /* CameraViewController.swift in Sources */,
+				364C43712995EB570008A5C4 /* Resnet50.mlmodel in Sources */,
 				3668D35F2992966A00F33006 /* ObjectClassificationApp.swift in Sources */,
+				366098C92997C46E00A74073 /* ContentViewModel.swift in Sources */,
+				369E423229992F1300231BE2 /* ImageClassificationAnalysis.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
