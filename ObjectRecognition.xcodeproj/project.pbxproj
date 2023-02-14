@@ -47,6 +47,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36289857299BA4C200954861 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3668D3602992966A00F33006 /* ContentView.swift */,
+				3668D37029929EEA00F33006 /* CameraView.swift */,
+				3668D36E2992985400F33006 /* CameraViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		36289858299BA4C700954861 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				366098C82997C46E00A74073 /* ContentViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		36289859299BA4E200954861 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				369E423129992F1300231BE2 /* ImageClassificationAnalysis.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3628985A299BA6A500954861 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				366098CA2997DAC400A74073 /* CameraSessionManager.swift */,
+				369E422F29992EB200231BE2 /* ImageClassifier.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		3668D3522992966A00F33006 = {
 			isa = PBXGroup;
 			children = (
@@ -67,17 +102,14 @@
 			isa = PBXGroup;
 			children = (
 				3668D3722992A00000F33006 /* Info.plist */,
-				3668D35E2992966A00F33006 /* ObjectClassificationApp.swift */,
-				3668D3602992966A00F33006 /* ContentView.swift */,
-				366098CA2997DAC400A74073 /* CameraSessionManager.swift */,
-				3668D37029929EEA00F33006 /* CameraView.swift */,
-				3668D36E2992985400F33006 /* CameraViewController.swift */,
-				366098C82997C46E00A74073 /* ContentViewModel.swift */,
-				369E422F29992EB200231BE2 /* ImageClassifier.swift */,
-				364C43702995EB570008A5C4 /* Resnet50.mlmodel */,
 				3668D3622992966C00F33006 /* Assets.xcassets */,
+				3668D35E2992966A00F33006 /* ObjectClassificationApp.swift */,
+				36289859299BA4E200954861 /* Model */,
+				36289857299BA4C200954861 /* View */,
+				36289858299BA4C700954861 /* ViewModel */,
+				3628985A299BA6A500954861 /* Utility */,
+				364C43702995EB570008A5C4 /* Resnet50.mlmodel */,
 				3668D3642992966C00F33006 /* Preview Content */,
-				369E423129992F1300231BE2 /* ImageClassificationAnalysis.swift */,
 			);
 			path = ObjectRecognition;
 			sourceTree = "<group>";
