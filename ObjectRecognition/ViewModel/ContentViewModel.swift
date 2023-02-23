@@ -9,7 +9,10 @@ import Foundation
 import Vision
 
 class ContentViewModel: ObservableObject, FrameHandler {
-    @Published private(set) var analysis: ImageClassificationAnalysis?
+    @Published private(set) var analysis: ImageClassificationAnalysisResult?
+    private let classifier: ObjectClassifier
+    let camera: CameraSessionInterface
+    var mlModel: VNCoreMLModel
     
     var resultDisplayText: String {
         identifierText + "\n" + confidenceText
@@ -27,21 +30,20 @@ class ContentViewModel: ObservableObject, FrameHandler {
         return "Confidence: \(percentage) %"
     }
     
-    init() {
-        ImageClassifier.shared.delegate = self
+    init(camera: CameraSessionInterface, classifier: ObjectClassifier, mlModel: VNCoreMLModel) {
+        self.camera = camera
+        self.classifier = classifier
+        self.mlModel = mlModel
+        classifier.delegate = self
     }
     
     func handleNewFrame(with pixelBuffer: CVImageBuffer) {
-        ImageClassifier.shared.gatherObservations(for: pixelBuffer)
-    }
-    
-    private func handleNewAnalysis() {
-        
+        classifier.handleNewImage(with: pixelBuffer, using: mlModel)
     }
 }
 
-extension ContentViewModel: ImageClassifierDelegate {
-    func didIdentifyNewObject(handle newAnalysis: ImageClassificationAnalysis) {
+extension ContentViewModel: ObjectClassifierDelegate {
+    func didIdentifyNewObject(handle newAnalysis: ImageClassificationAnalysisResult) {
         let isSameIdentification = newAnalysis.identifier == (analysis?.identifier ?? "")
         let hasLowerConfidence = newAnalysis.confidence < (analysis?.confidence ?? -Float.greatestFiniteMagnitude)
         let isNoise = isSameIdentification && hasLowerConfidence

@@ -13,7 +13,10 @@ struct ObjectRecognitionApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let viewModel = ContentViewModel(camera: CameraSessionManager.shared,
+                                             classifier: ObjectClassifier.shared,
+                                             mlModel: ModelLibrary.resnet50)
+            ContentView(viewModel: viewModel)
         }
         .onChange(of: scenePhase) { phase in
             if phase == .active {

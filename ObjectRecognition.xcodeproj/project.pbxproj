@@ -16,8 +16,10 @@
 		3668D3662992966C00F33006 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3668D3652992966C00F33006 /* Preview Assets.xcassets */; };
 		3668D36F2992985400F33006 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3668D36E2992985400F33006 /* CameraViewController.swift */; };
 		3668D37129929EEA00F33006 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3668D37029929EEA00F33006 /* CameraView.swift */; };
-		369E423029992EB200231BE2 /* ImageClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369E422F29992EB200231BE2 /* ImageClassifier.swift */; };
-		369E423229992F1300231BE2 /* ImageClassificationAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369E423129992F1300231BE2 /* ImageClassificationAnalysis.swift */; };
+		3681FB4929A6958E00FB326A /* ImageAnalysisResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3681FB4829A6958E00FB326A /* ImageAnalysisResultView.swift */; };
+		3681FB4B29A6A8B900FB326A /* ModelLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3681FB4A29A6A8B900FB326A /* ModelLibrary.swift */; };
+		369E423029992EB200231BE2 /* ObjectClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369E422F29992EB200231BE2 /* ObjectClassifier.swift */; };
+		369E423229992F1300231BE2 /* ImageClassificationAnalysisResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369E423129992F1300231BE2 /* ImageClassificationAnalysisResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +34,10 @@
 		3668D36E2992985400F33006 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		3668D37029929EEA00F33006 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		3668D3722992A00000F33006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		369E422F29992EB200231BE2 /* ImageClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassifier.swift; sourceTree = "<group>"; };
-		369E423129992F1300231BE2 /* ImageClassificationAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassificationAnalysis.swift; sourceTree = "<group>"; };
+		3681FB4829A6958E00FB326A /* ImageAnalysisResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAnalysisResultView.swift; sourceTree = "<group>"; };
+		3681FB4A29A6A8B900FB326A /* ModelLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLibrary.swift; sourceTree = "<group>"; };
+		369E422F29992EB200231BE2 /* ObjectClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectClassifier.swift; sourceTree = "<group>"; };
+		369E423129992F1300231BE2 /* ImageClassificationAnalysisResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassificationAnalysisResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,7 @@
 				3668D3602992966A00F33006 /* ContentView.swift */,
 				3668D37029929EEA00F33006 /* CameraView.swift */,
 				3668D36E2992985400F33006 /* CameraViewController.swift */,
+				3681FB4829A6958E00FB326A /* ImageAnalysisResultView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -68,7 +73,7 @@
 		36289859299BA4E200954861 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				369E423129992F1300231BE2 /* ImageClassificationAnalysis.swift */,
+				369E423129992F1300231BE2 /* ImageClassificationAnalysisResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -77,7 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				366098CA2997DAC400A74073 /* CameraSessionManager.swift */,
-				369E422F29992EB200231BE2 /* ImageClassifier.swift */,
+				369E422F29992EB200231BE2 /* ObjectClassifier.swift */,
+				3681FB4A29A6A8B900FB326A /* ModelLibrary.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -192,15 +198,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3681FB4B29A6A8B900FB326A /* ModelLibrary.swift in Sources */,
 				3668D37129929EEA00F33006 /* CameraView.swift in Sources */,
-				369E423029992EB200231BE2 /* ImageClassifier.swift in Sources */,
+				369E423029992EB200231BE2 /* ObjectClassifier.swift in Sources */,
 				3668D3612992966A00F33006 /* ContentView.swift in Sources */,
 				366098CB2997DAC400A74073 /* CameraSessionManager.swift in Sources */,
 				3668D36F2992985400F33006 /* CameraViewController.swift in Sources */,
 				364C43712995EB570008A5C4 /* Resnet50.mlmodel in Sources */,
 				3668D35F2992966A00F33006 /* ObjectClassificationApp.swift in Sources */,
 				366098C92997C46E00A74073 /* ContentViewModel.swift in Sources */,
-				369E423229992F1300231BE2 /* ImageClassificationAnalysis.swift in Sources */,
+				369E423229992F1300231BE2 /* ImageClassificationAnalysisResult.swift in Sources */,
+				3681FB4929A6958E00FB326A /* ImageAnalysisResultView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

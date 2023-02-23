@@ -1,5 +1,5 @@
 //
-//  ImageClassificationAnalysis.swift
+//  ImageClassificationAnalysisResult.swift
 //  ObjectRecognition
 //
 //  Created by Justin Lee on 2/12/23.
@@ -8,7 +8,7 @@
 import Foundation
 import Vision
 
-struct ImageClassificationAnalysis {
+struct ImageClassificationAnalysisResult {
     var identifier: String
     var confidence: Float
     
