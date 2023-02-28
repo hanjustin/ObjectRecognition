@@ -20,8 +20,11 @@ class ContentViewModel: ObservableObject, FrameHandler {
     
     var identifierText: String {
         guard let analysis else { return UIConstants.defaultText }
-        let eachPossibleIdentifierInNewLine = analysis.identifier.components(separatedBy: ",").map { $0.trimmingCharacters(in: .whitespaces) }.joined(separator: "\n")
-        
+        let eachPossibleIdentifierInNewLine =
+            analysis.identifier
+            .components(separatedBy: ",")
+            .map { $0.trimmingCharacters(in: .whitespaces) }
+            .joined(separator: "\n")
         return eachPossibleIdentifierInNewLine
     }
     

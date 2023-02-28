@@ -1,6 +1,6 @@
 ![Swift Version](https://img.shields.io/badge/Swift-5.7+-Green) ![Xcode](https://img.shields.io/badge/Xcode-14.2-blue) ![Platform iOS](https://img.shields.io/badge/platform-iOS-lightgrey) ![Contact](https://img.shields.io/badge/contact-justin.lee.iosdev%40gmail.com-yellowgreen)
 
-# Demo
+# Demo video - [Download](/Demo/ObjectDetectionDemo.gif)
 <p align="center">
   <img alt="ObjectDetectionDemo" src="./Demo/ObjectDetectionDemo.gif">
 </p>
